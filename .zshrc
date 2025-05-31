@@ -28,16 +28,25 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::terraform
 
-source $ZSH/oh-my-zsh.sh
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# Homebrew completions
+eval $(/opt/homebrew/bin/brew shellenv)
+eval "$(direnv hook zsh)"
+
+# Init shell theme and configuration
+eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/zen.toml)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then # Prevent loading oh-my-posh in Apple_Terminal
+  eval "$(oh-my-posh init zsh)"
+fi
 
 # NVM - Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Homebrew completions
-eval $(/opt/homebrew/bin/brew shellenv)
-eval "$(direnv hook zsh)"
 
 # Android development
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
