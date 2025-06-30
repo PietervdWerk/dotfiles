@@ -42,6 +42,9 @@
         ./modules/cli-tools.nix
         ./modules/shell.nix
         ./modules/homebrew.nix
+
+        # Languages
+        ./modules/languages/javascript.nix
       ];
     };
   };
