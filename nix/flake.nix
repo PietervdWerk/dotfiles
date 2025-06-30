@@ -36,6 +36,9 @@
     darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
+        ./modules/configuration.nix
+
+        # Tools
         ./modules/cli-tools.nix
         ./modules/shell.nix
         ./modules/homebrew.nix
