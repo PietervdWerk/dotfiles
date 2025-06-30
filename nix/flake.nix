@@ -12,6 +12,8 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
+      system.primaryUser = "pietervanderwerk";
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -36,6 +38,7 @@
         configuration
         ./modules/cli-tools.nix
         ./modules/shell.nix
+        ./modules/homebrew.nix
       ];
     };
   };
