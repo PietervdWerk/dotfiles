@@ -16,6 +16,7 @@
   # Install shell tools
   environment.systemPackages = with pkgs; [
     oh-my-posh
+    hstr
   ];
 
   programs.zsh = {
