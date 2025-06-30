@@ -12,10 +12,11 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
+      # List packages installed in system profile.
       environment.systemPackages =
-        [ pkgs.vim
+        [ 
+          pkgs.vim
+          pkgs.zinit
         ];
 
       # Necessary for using flakes on this system.
@@ -24,7 +25,19 @@
       security.pam.services.sudo_local.enable = false;
 
       # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+      programs.zsh.enable = true;
+
+      # Set zsh as the default shell for the user
+      users.users.pietervanderwerk = {
+        name = "pietervanderwerk";
+        home = "/Users/pietervanderwerk";
+        shell = pkgs.zsh;
+      };
+
+      # Make sure Nix-installed binaries are in your PATH for Zinit
+      environment.pathsInUserProfile = [
+        "/Users/pietervanderwerk/.nix-profile/bin"
+      ];
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
