@@ -29,7 +29,7 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::terraform
 
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 zinit cdreplay -q
 
@@ -53,7 +53,7 @@ export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+# export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools:$PATH
 
