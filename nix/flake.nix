@@ -26,6 +26,8 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
+      nixpkgs.config.allowUnfree = true;
+
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
@@ -42,9 +44,12 @@
         ./modules/cli-tools.nix
         ./modules/shell.nix
         ./modules/homebrew.nix
+        ./modules/apps.nix
 
         # Languages
         ./modules/languages/javascript.nix
+        ./modules/languages/php.nix
+        ./modules/languages/go.nix
       ];
     };
   };
