@@ -87,3 +87,5 @@ export HSTR_TIOCSTI=y
 
 # Kubernetes stuff
 export KUBECONFIG=~/.kube/config
+
+export EDITOR=nvim
