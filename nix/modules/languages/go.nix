@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    go
+    go_1_25
   ];
 }

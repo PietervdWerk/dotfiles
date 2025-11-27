@@ -9,6 +9,7 @@
     zoxide
     direnv
     devbox
+    go-task
 
     dua
     fzf
