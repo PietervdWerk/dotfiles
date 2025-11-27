@@ -85,7 +85,17 @@ export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 export HSTR_TIOCSTI=y
 
+eval "$(task --completion zsh)"
+
 # Kubernetes stuff
 export KUBECONFIG=~/.kube/config
 
 export EDITOR=nvim
+
+# Lazygit alias
+alias lz=lazygit
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/pietervanderwerk/.lmstudio/bin"
+# End of LM Studio CLI section
+
