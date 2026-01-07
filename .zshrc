@@ -99,3 +99,5 @@ alias lz=lazygit
 export PATH="$PATH:/Users/pietervanderwerk/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Added by Antigravity
+export PATH="/Users/pietervanderwerk/.antigravity/antigravity/bin:$PATH"
