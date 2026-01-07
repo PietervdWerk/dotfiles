@@ -20,7 +20,8 @@
     };
 
     brews = [
-      "sst/tap/opencode"  # AI coding agent, built for the terminal - https://opencode.ai/
+      "sst/tap/opencode"            # AI coding agent, built for the terminal - https://opencode.ai/
+      "siderolabs/tap/talosctl"     # CLI for out-of-band management of Kubernetes nodes created by Talos - https://www.talos.dev/
     ];
 
     casks = [
@@ -36,7 +37,7 @@
       "dataflare"         # Simple tauri based database manager - https://dataflare.app/
       "superwhisper"      # Dictation tool including LLM reformatting - https://superwhisper.com/
       "tailscale"         # Mesh VPN built on WireGuard for secure networking - https://tailscale.com/
-      "spotify"
+      "spotify"           # Music streaming service - https://spotify.com/
     ];
   };
 }
