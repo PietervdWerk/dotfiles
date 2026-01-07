@@ -10,6 +10,7 @@
     direnv
     devbox
     go-task
+    yazi
 
     dua
     fzf
