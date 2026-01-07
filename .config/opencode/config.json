@@ -26,6 +26,7 @@
     }
   },
   "plugin": [
+    "opencode-skills",
     "opencode-antigravity-auth@1.2.7"
   ],
   "agent": {
