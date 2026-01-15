@@ -27,11 +27,15 @@
   },
   "plugin": [
     "opencode-skills",
-    "opencode-antigravity-auth@1.2.7"
+    "opencode-antigravity-auth@1.2.8",
+    "opencode-antigravity-quota@0.1.3"
   ],
   "agent": {
     "review": {
       "description": "Reviews code for best practices and potential issues"
+    },
+    "explore": {
+      "model": "github-copilot/gpt-4.1"
     }
   },
   "provider": {
