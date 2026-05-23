@@ -1,0 +1,25 @@
+[metadata]
+name = "gh-stars-semantic"
+description = "GitHub starred repos ranked by description query (run: ghss \"what you're looking for\")"
+
+[source]
+# Results are pre-ranked by ghss; no_sort preserves that order.
+# Fuzzy filter still works on top of the ranked list.
+command = "cat $HOME/.cache/gh-stars/last-results.txt 2>/dev/null || printf 'No results yet. Run: ghss \"describe what you want\"\\n'"
+display = "{split:\\t:0} │ {split:\\t:1}"
+output = "{split:\\t:0}"
+no_sort = true
+
+[preview]
+command = [
+  "printf '\\033[1mRepo:\\033[0m     %s\\n\\033[1mDesc:\\033[0m     %s\\n\\033[1mTopics:\\033[0m   %s\\n\\033[1mLanguage:\\033[0m %s\\n' '{split:\\t:0}' '{split:\\t:1}' '{split:\\t:2}' '{split:\\t:3}'",
+  "gh repo view '{}'",
+]
+
+[keybindings]
+ctrl-o = "actions:open"
+
+[actions.open]
+description = "Open repo in browser"
+command = "gh repo browse '{}'"
+mode = "execute"

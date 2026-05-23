@@ -1,0 +1,25 @@
+[metadata]
+name = "gh-stars"
+description = "Fuzzy search GitHub starred repositories"
+
+[source]
+# Fetches live from GitHub on open, streams results as they arrive, and
+# caches to repos.tsv for ghss-update (semantic index rebuild).
+command = "mkdir -p $HOME/.cache/gh-stars && gh api user/starred --paginate --jq '.[] | [.full_name, (.description // \"\"), ((.topics // []) | join(\",\")), (.language // \"\")] | @tsv' | tee $HOME/.cache/gh-stars/repos.tsv"
+display = "{split:\\t:0} │ {split:\\t:1}"
+output = "{split:\\t:0}"
+
+[preview]
+# Cycle with Ctrl-F: fast local cache view → full GitHub view
+command = [
+  "printf '\\033[1mRepo:\\033[0m     %s\\n\\033[1mDesc:\\033[0m     %s\\n\\033[1mTopics:\\033[0m   %s\\n\\033[1mLanguage:\\033[0m %s\\n' '{split:\\t:0}' '{split:\\t:1}' '{split:\\t:2}' '{split:\\t:3}'",
+  "gh repo view '{}'",
+]
+
+[keybindings]
+ctrl-o = "actions:open"
+
+[actions.open]
+description = "Open repo in browser"
+command = "gh repo browse '{}'"
+mode = "execute"
