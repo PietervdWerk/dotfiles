@@ -14,6 +14,7 @@
 
     dua
     fzf
+    television
     bat
     air
   ];
