@@ -36,7 +36,7 @@
       "lm-studio"         # Download and run AI models - https://lmstudio.ai/
       "dataflare"         # Simple tauri based database manager - https://dataflare.app/
       "superwhisper"      # Dictation tool including LLM reformatting - https://superwhisper.com/
-      "tailscale"         # Mesh VPN built on WireGuard for secure networking - https://tailscale.com/
+      "tailscale-app"     # Mesh VPN built on WireGuard for secure networking - https://tailscale.com/
       "spotify"           # Music streaming service - https://spotify.com/
     ];
   };
