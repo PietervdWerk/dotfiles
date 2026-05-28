@@ -8,7 +8,12 @@
     },
     "playwright": {
       "type": "local",
-      "command": ["bunx", "@playwright/mcp@latest", "--browser", "chrome"],
+      "command": [
+        "bunx",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chrome"
+      ],
       "enabled": true
     },
     "context7": {
@@ -26,7 +31,10 @@
     },
     "xc-mcp": {
       "type": "local",
-      "command": ["/Users/pietervanderwerk/.nvm/versions/node/v22.14.0/bin/xc-mcp", "--mini"],
+      "command": [
+        "/Users/pietervanderwerk/.nvm/versions/node/v22.14.0/bin/xc-mcp",
+        "--mini"
+      ],
       "enabled": true,
       "environment": {
         "XC_MCP_DEFER_LOADING": "false",
@@ -41,10 +49,14 @@
   ],
   "agent": {
     "review": {
-      "description": "Reviews code for best practices and potential issues"
+      "description": "Reviews code for best practices and potential issues",
+      "options": {},
+      "permission": {}
     },
     "explore": {
-      "model": "github-copilot/gpt-4.1"
+      "model": "github-copilot/gpt-4.1",
+      "options": {},
+      "permission": {}
     }
   },
   "provider": {
@@ -55,5 +67,6 @@
         "baseURL": "https://pieters-macbook-pro.beardie-bowfin.ts.net/v1"
       }
     }
-  }
+  },
+  "shell": "zsh"
 }
